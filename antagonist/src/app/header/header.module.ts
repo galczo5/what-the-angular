@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TopNavigationComponent } from './top-navigation/top-navigation.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {TopNavigationComponent} from './top-navigation/top-navigation.component';
 
 @NgModule({
   declarations: [TopNavigationComponent],
@@ -11,4 +11,8 @@ import { TopNavigationComponent } from './top-navigation/top-navigation.componen
     CommonModule
   ]
 })
-export class HeaderModule { }
+export class HeaderModule {
+  constructor() {
+    console.log('constructor', 'module', 'HeaderModule');
+  }
+}

@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ConsoleService } from './console.service';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ConsoleService} from './console.service';
 import {AbstractConsoleService} from "./abstract-console.service";
 
 @NgModule({
@@ -10,4 +10,8 @@ import {AbstractConsoleService} from "./abstract-console.service";
     CommonModule
   ]
 })
-export class ConsoleModule { }
+export class ConsoleModule {
+  constructor() {
+    console.log('constructor', 'module', 'ConsoleModule');
+  }
+}

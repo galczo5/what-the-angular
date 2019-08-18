@@ -1,7 +1,6 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {LeftSidebarComponent} from './left-sidebar/left-sidebar.component';
 
 
 @NgModule({
@@ -13,4 +12,8 @@ import { LeftSidebarComponent } from './left-sidebar/left-sidebar.component';
     CommonModule
   ]
 })
-export class SidebarModule { }
+export class SidebarModule {
+  constructor() {
+    console.log('constructor', 'module', 'SidebarModule');
+  }
+}

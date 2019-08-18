@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import {HeaderModule} from './header/header.module';
 import {SidebarModule} from './sidebar/sidebar.module';
 import {BodyModule} from './body/body.module';
-import {CONSOLE_PREFIX, ConsoleService} from './console/console.service';
 import {ConsoleModule} from './console/console.module';
+import {AbstractConsoleService} from "./console/abstract-console.service";
 
 @NgModule({
   declarations: [
@@ -20,12 +20,12 @@ import {ConsoleModule} from './console/console.module';
     BodyModule
   ],
   providers: [
-    { provide: CONSOLE_PREFIX, useValue: 'AWESOME_DEVELOPER' }
+   // { provide: CONSOLE_PREFIX, useValue: 'AWESOME_DEVELOPER' }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor(consoleService: ConsoleService) {
+  constructor(consoleService: AbstractConsoleService) {
     consoleService.info(`HI! Aren't you awesome web developer?` +
                               `We have job for you! Check it out and apply for it at hire_me@awesome.xyz`);
   }

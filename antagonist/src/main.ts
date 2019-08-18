@@ -1,4 +1,4 @@
-import { enableProdMode } from '@angular/core';
+import {enableProdMode, PLATFORM_INITIALIZER} from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
@@ -8,5 +8,14 @@ if (environment.production) {
   enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule)
+platformBrowserDynamic([
+    {
+      multi: true,
+      provide: PLATFORM_INITIALIZER,
+      useValue: () => {
+        console.log('PLATFORM_INITIALIZER');
+      }
+    }
+  ])
+  .bootstrapModule(AppModule)
   .catch(err => console.error(err));

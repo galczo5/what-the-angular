@@ -1,0 +1,9 @@
+<div style="display: flex; flex-direction: column; width: 500px; margin: 100px auto; border: 1px solid black; padding: 25px;">
+  <h1>ChangeDetectionCycles: {{ count }}</h1>
+  <div>
+    <button (click)="clear()">Clear counter</button>
+    <button (click)="clearConsole()">Clear console</button>
+  </div>
+  <app-sync-emitter (output)="outputHandler()"></app-sync-emitter>
+  <app-async-emitter (output)="outputHandler()"></app-async-emitter>
+</div>
